@@ -7,21 +7,21 @@ It is usually common to install OpenWRT on supported devices to have better qual
 
 This culminated in the 4/32 warning on OpenWRT main page, urging peers to not buy devices with 4mb ram / 32mb storage space anymore as they won't be supported in the future
 
-If you build using image builder, you can still have the full OpenWRT with all the features on small devices, but without the web interfae (called Luci) so managing it is a little anoying
+If you build using image builder, you can still have the full OpenWRT with all the features on small devices, but without the web interface (called Luci) so managing it is a little annoying
 
 But it still possible to have an working image with interface (Luci) and support for WPA3, the catch is that you will need to remove other features and leave the device as a <b>Dumb AP</b>, and leave the main functions like dhcp/firewall to the main router
 
 ---
 
 <b>WPA3</b>
-WPA3 is the new security standard for wifi networks, superceding WPA2, wich brings mostly security benefits (in the past, when WPA2 arrived it along with it came performance improvements as well)
+WPA3 is the new security standard for wifi networks, superseding WPA2, which brings mostly security benefits (in the past, when WPA2 arrived it along with it came performance improvements as well)
 
-WPA3 can coexist with WPA2 if its set in mixed mode, that is, when a WPA3 client connects to the network it uses WPA3, if a WPA2 only client connects to the network, it sees as WPA2 and connects, in this mode retrocompatibility is possible with older devices (Smartphones, TVs, IP Cameras, IOTs...)
+WPA3 can coexist with WPA2 if its set in mixed mode, that is, when a WPA3 client connects to the network it uses WPA3, if a WPA2 only client connects to the network, it sees as WPA2 and connects, in this mode retro-compatibility is possible with older devices (Smartphones, TVs, IP Cameras, IOTs...)
 
 ---
 
 <b>WOLFSSL</b>
-When installing the standard OpenWRT image, it normally comes installed with a package called wpad-mini, wich is a basic version of the full wpad package with less features, and supports only WPA2
+When installing the standard OpenWRT image, it normally comes installed with a package called wpad-mini, which is a basic version of the full wpad package with less features, and supports only WPA2
 
 So as the time of this writing the only way to have WPA3 with OpenWRT is by installing a package called hostapd-wolfssl wich along providing WPA3 presumably brings performance benefits as well
 
@@ -35,7 +35,7 @@ But you have to sacrifice a few features to achieve this, like DHCP, Firewall, P
 
 <b>BUILDING YOUR OWN IMAGE</b>
 
-The easiest way to build your own image is using the image builder for your device, and passing instructions to it (Build for this device, install those packages, remove those ones, etc) so in this example I'm using a cheap TP-Link WR740N hwrdware version 5 that I have a bunch of lying around
+The easiest way to build your own image is using the image builder for your device, and passing instructions to it (Build for this device, install those packages, remove those ones, etc) so in this example I'm using a cheap TP-Link WR740N hardware version 5 that I have a bunch of lying around
 
 So, go where you would normally find the image to download and look for imagebuilder, in my case it is here
 
@@ -64,6 +64,8 @@ sysupgrade -v -n -F /tmp/*.bin
 (Assuming user root without password, default ip address, etc)
 
 <b>I Recommend that when flashing you should reset the device to default settings, not saving any previous configuration</b>
+
+---
 
 <b>CONFIGURING</b>
 
